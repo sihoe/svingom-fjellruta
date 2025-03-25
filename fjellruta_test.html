@@ -1,21 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test: Fjellruta kart og høydeprofil</title>
+  <title>Fjellruta – testvisning</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     body { margin: 0; font-family: sans-serif; background: #f2f2f2; }
+    h2 { text-align: center; margin: 20px; }
     #map { height: 50vh; }
-    .chart-wrapper { position: relative; height: 30vh; margin: 20px; background: white; }
-    canvas { position: absolute; width: 100%; height: 100%; }
+    .chart-wrapper {
+      position: relative;
+      height: 30vh;
+      margin: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
 
-<h2 style="text-align:center; margin:20px;">Fjellruta – testvisning</h2>
+<h2>Fjellruta – testvisning</h2>
 
 <div id="map"></div>
 
@@ -23,17 +34,20 @@
   <canvas id="elevationChart"></canvas>
 </div>
 
+<!-- JS Libraries -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3"></script>
 
 <script>
-  const map = L.map('map').setView([59.8, 9.0], 10);
+  // 1. Sett opp Leaflet-kart
+  const map = L.map('map').setView([60.25, 8.85], 11);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Kartdata © OpenStreetMap',
     maxZoom: 19
   }).addTo(map);
 
+  // 2. Legg til rute (GPX-spor)
   new L.GPX('https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Fjellruta_over_Vegglifjell_og_Imingfjell.gpx', {
     async: true,
     polyline_options: {
@@ -51,6 +65,7 @@
     map.fitBounds(e.target.getBounds(), { padding: [20, 20] });
   }).addTo(map);
 
+  // 3. Last inn og tegn høydeprofil
   async function loadElevationData() {
     const res = await fetch("https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/fjellruta_elevation.json");
     const data = await res.json();
@@ -64,7 +79,15 @@
       data: {
         labels: distances,
         datasets: [
-          { data: elevations, borderColor: "#37394E", borderWidth: 3, pointRadius: 0, tension: 0.4, fill: true, backgroundColor: "rgba(55, 57, 78, 0.2)" }
+          {
+            data: elevations,
+            borderColor: "#37394E",
+            borderWidth: 3,
+            pointRadius: 0,
+            tension: 0.4,
+            fill: true,
+            backgroundColor: "rgba(55, 57, 78, 0.2)"
+          }
         ]
       },
       options: {
@@ -89,16 +112,18 @@
   }
 
   loadElevationData();
-  fetch("https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/fjellruta_poi.json")
-  .then(res => res.json())
-  .then(pois => {
-    pois.forEach(poi => {
-      L.marker([poi.lat, poi.lon])
-        .addTo(map)
-        .bindPopup(`<strong>${poi.name}</strong><br>${poi.desc}`);
-    });
-  });
 
+  // 4. Legg til POI-markører fra JSON
+  fetch("https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/fjellruta_poi.json")
+    .then(res => res.json())
+    .then(pois => {
+      pois.forEach(poi => {
+        L.marker([poi.lat, poi.lon])
+          .addTo(map)
+          .bindPopup(`<strong>${poi.name}</strong><br>${poi.desc}`);
+      });
+    });
 </script>
+
 </body>
 </html>
