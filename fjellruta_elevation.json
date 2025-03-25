@@ -5873,11 +5873,11 @@
   },
   {
     "distance": 54.894,
-    "elevation": 236.0
+    "elevation": null
   },
   {
     "distance": 55.019,
-    "elevation": null
+    "elevation": 226.0
   },
   {
     "distance": 55.119,
@@ -5917,7 +5917,7 @@
   },
   {
     "distance": 55.314,
-    "elevation": 219.0
+    "elevation": null
   },
   {
     "distance": 55.366,
@@ -5925,7 +5925,7 @@
   },
   {
     "distance": 55.379,
-    "elevation": null
+    "elevation": 221.0
   },
   {
     "distance": 55.392,
@@ -5965,11 +5965,11 @@
   },
   {
     "distance": 55.676,
-    "elevation": 243.0
+    "elevation": null
   },
   {
     "distance": 55.75,
-    "elevation": null
+    "elevation": 245.0
   },
   {
     "distance": 55.765,
@@ -6089,7 +6089,7 @@
   },
   {
     "distance": 56.92,
-    "elevation": 320.0
+    "elevation": null
   },
   {
     "distance": 56.936,
@@ -6101,7 +6101,7 @@
   },
   {
     "distance": 56.98,
-    "elevation": null
+    "elevation": 320.0
   },
   {
     "distance": 56.991,
@@ -6133,7 +6133,7 @@
   },
   {
     "distance": 57.033,
-    "elevation": 328.0
+    "elevation": null
   },
   {
     "distance": 57.056,
@@ -6145,7 +6145,7 @@
   },
   {
     "distance": 57.099,
-    "elevation": null
+    "elevation": 330.0
   },
   {
     "distance": 57.133,
@@ -6181,7 +6181,7 @@
   },
   {
     "distance": 57.305,
-    "elevation": 343.0
+    "elevation": null
   },
   {
     "distance": 57.32,
@@ -6189,7 +6189,7 @@
   },
   {
     "distance": 57.382,
-    "elevation": null
+    "elevation": 348.0
   },
   {
     "distance": 57.396,
@@ -6221,7 +6221,7 @@
   },
   {
     "distance": 57.664,
-    "elevation": 377.0
+    "elevation": null
   },
   {
     "distance": 57.68,
@@ -6229,7 +6229,7 @@
   },
   {
     "distance": 57.728,
-    "elevation": null
+    "elevation": 381.0
   },
   {
     "distance": 57.742,
