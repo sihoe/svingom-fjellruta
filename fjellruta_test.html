@@ -22,19 +22,20 @@
       width: 100%;
       height: 100%;
     }
+    .popup-img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
   </style>
 </head>
 <body>
 
 <h2>Fjellruta – testvisning</h2>
-
 <div id="map"></div>
+<div class="chart-wrapper"><canvas id="elevationChart"></canvas></div>
 
-<div class="chart-wrapper">
-  <canvas id="elevationChart"></canvas>
-</div>
-
-<!-- JS Libraries -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3"></script>
@@ -66,7 +67,6 @@
   async function loadElevationData() {
     const res = await fetch("https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/fjellruta_elevation.json");
     const data = await res.json();
-
     const route = data.filter(d => d.elevation !== null);
     const distances = route.map(d => parseFloat(d.distance));
     const elevations = route.map(d => parseFloat(d.elevation));
@@ -75,34 +75,23 @@
       type: 'line',
       data: {
         labels: distances,
-        datasets: [
-          {
-            data: elevations,
-            borderColor: "#37394E",
-            borderWidth: 3,
-            pointRadius: 0,
-            tension: 0.4,
-            fill: true,
-            backgroundColor: "rgba(55, 57, 78, 0.2)"
-          }
-        ]
+        datasets: [{
+          data: elevations,
+          borderColor: "#37394E",
+          borderWidth: 3,
+          pointRadius: 0,
+          tension: 0.4,
+          fill: true,
+          backgroundColor: "rgba(55, 57, 78, 0.2)"
+        }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: {
-            type: 'linear',
-            ticks: { callback: v => `${v.toFixed(0)} km` },
-            title: { display: false },
-            grid: { display: false }
-          },
-          y: {
-            ticks: { stepSize: 100 },
-            title: { display: false },
-            grid: { display: false }
-          }
+          x: { type: 'linear', ticks: { callback: v => `${v.toFixed(0)} km` }, grid: { display: false } },
+          y: { ticks: { stepSize: 100 }, grid: { display: false } }
         }
       }
     });
@@ -111,85 +100,31 @@
   loadElevationData();
 
   function addCustomMarker(coords, name, imageUrl, description) {
-    const marker = L.marker(coords).addTo(map);
-    const popupContent = `<strong>${name}</strong><br>${description}`;
-    marker.bindPopup(popupContent);
+    const img = imageUrl ? `<img src="${imageUrl}" class="popup-img" />` : '';
+    const popupContent = `${img}<strong>${name}</strong><br>${description}`;
+    L.marker(coords).addTo(map).bindPopup(popupContent);
   }
 
-  // Her legger du inn custom POI:
-  addCustomMarker([59.98905897, 8.816432107], 'Sandviken Camping', '', 'Vakker campingplass med hytter, badstu, flott sandstrand og nydelig utsikt over Tinnsjø');
+  // POI-markører:
+  addCustomMarker([59.995255107, 8.828221442], 'Austbygde Bakeri.', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/austbygdebakeri.jpg', 'Deilige bakevarer, middag og trivelig vertskap');
+  addCustomMarker([60.078617532, 8.864987101], 'Håvardsrud Seterliv', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/haavardsrud_seterliv.jpg', 'Her kan bo og delta i det tradisjonsrike seterlivet eller svinge innom for å smake ekte rjomegraut og ferske bakevarer');
+  addCustomMarker([60.267179296, 8.943991088], 'Uvdalsbua', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/uvdalsbua.jpg', 'Lokale produkter, god kaffe, flotte gaver og souvernirer');
+  addCustomMarker([60.267799011, 8.942691045], 'Rødberg Hotell', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/rodberghotell.jpg', 'Gode senger og hjemmelagd mat');
+  addCustomMarker([60.264915743, 8.788765865], 'Camp Uvdal', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/camp_uvdal.jpg', 'Idyllisk camp med aktivitetspark, hyggelige hytter og god mat');
+  addCustomMarker([60.265177268, 8.834852182], 'Uvdal stavkirke', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/uvdal_stavkirke.jpg', 'En nydelig stavkirke fra middelalderen');
+  addCustomMarker([60.23369961, 8.585622311], 'Imingfjell Turistheim', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Imingfjell_Turistheim.jpg', 'God mat ved inngangen til Hardangervidda med fine fjellturer og fiskemuligheter');
+  addCustomMarker([60.09926326, 8.756140888], 'Å Camp', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/aa_camp.jpg', 'Prøv noen netter i flotte tretopphytter');
+  addCustomMarker([60.029533913, 8.826577634], 'Austbygde kirke', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/austbygdekirke.jpg', 'Fin klassisk hvit trekirke');
+  addCustomMarker([60.14437894, 9.006701689], 'Eidsåe badeplass', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/eidsaae_nordefjord_badeplass.jpg', 'Fin badekulp i elva');
+  addCustomMarker([60.156268402, 9.010185517], 'Frognerhagen gård', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Frognerhagen.jpg', 'Her kan du leie SUP og prøve deg på fjorden');
+  addCustomMarker([60.164560374, 9.010271502], 'Nore stavkirke', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/nore_stavkirke.jpg', 'En unik stavkirke i hjertet av Numedal');
+  addCustomMarker([60.16865753, 9.009658868], 'Nordfjord stasjon', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/norefjord_stasjon.jpg', 'En av mange flotte stasjoner langs Numedalsbanen');
+  addCustomMarker([60.006793803, 8.834367819], 'Bruhølen', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/bruholen_austbygdaai.jpg', 'Her er det flotte kulper i Austbygdåi');
+  addCustomMarker([60.046342939, 9.153187378], 'Badedammen på Veggli', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/badedammen_veggli.jpg', 'Et yndet badested midt i Veggli sentrum');
+  addCustomMarker([60.040467808, 9.15673983], 'Fjellkompaniet', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Veggli_vertshus.jpg', 'Alt du trenger av utstyr til sykkelturen og friluftsliv');
+  addCustomMarker([60.231947859, 8.586378742], 'Demning Imingfjell', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Imingfjell_deming.jpg', 'Et vakkert skue ved inngangen til Hardangervidda');
 
-addCustomMarker([59.995255107, 8.828221442], 'Austbygde Bakeri.', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/austbygdebakeri.jpg
-', 'Deilige bakevarer, middag og trivelig vertskap');
-
-addCustomMarker([60.078617532, 8.864987101], 'Håvardsrud Seterliv', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/haavardsrud_seterliv.jpg
-', 'Her kan bo og delta i det tradisjonsrike seterlivet eller svinge innom for å smake ekte rjomegraut og ferske bakevarer');
-
-addCustomMarker([60.265884939, 8.946854063], 'Kiwi Rødberg', '', 'Alt du trenger på sykkelturen');
-
-addCustomMarker([60.267179296, 8.943991088], 'Uvdalsbua', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/uvdalsbua.jpg
-', 'Lokale produkter, god kaffe, flotte gaver og souvernirer');
-
-addCustomMarker([60.267799011, 8.942691045], 'Rødberg Hotell', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/rodberghotell.jpg
-', 'Gode senger og hjemmelagd mat');
-
-addCustomMarker([60.259987539, 8.928883543], 'Dokkebergfossen', '', 'Flott foss og bru');
-
-addCustomMarker([60.264915743, 8.788765865], 'Camp Uvdal', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/camp_uvdal.jpg
-', 'Idyllisk camp med aktivitetspark, hyggelige hytter og god mat');
-
-addCustomMarker([60.265177268, 8.834852182], 'Uvdal stavkirke', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/uvdal_stavkirke.jpg
-', 'En nydelig stavkirke fra middelalderen');
-
-addCustomMarker([60.23369961, 8.585622311], 'Imingfjell Turistheim', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Imingfjell_Turistheim.jpg
-', 'God mat ved inngangen til Hardangervidda med fine fjellturer og fiskemuligheter');
-
-addCustomMarker([60.09926326, 8.756140888], 'Å Camp', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/aa_camp.jpg
-', 'Prøv noen netter i flotte tretopphytter');
-
-addCustomMarker([60.050557426, 8.817412481], 'Lure kulturminne område', '', 'Flotte turer i kulturlandskapet');
-
-addCustomMarker([60.029533913, 8.826577634], 'Austbygde kirke', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/austbygdekirke.jpg
-', 'Fin klassisk hvit trekirke');
-
-addCustomMarker([60.135978776, 9.018087043], 'Kravik stasjon Numedalsbanen:', '', 'En vakker stasjon på Numedalsbanen, hit kan du sykle på dresin fra Veggli');
-
-addCustomMarker([60.14437894, 9.006701689], 'Eidsåe badeplass', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/eidsaae_nordefjord_badeplass.jpg
-', 'Fin badekulp i elva');
-
-addCustomMarker([60.156268402, 9.010185517], 'Frognerhagen gård', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Frognerhagen.jpg
-', 'Her kan du leie SUP og prøve deg på fjorden');
-
-addCustomMarker([60.164560374, 9.010271502], 'Nore stavkirke', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/nore_stavkirke.jpg
-', 'En unik stavkirke i hjertet av Numedal');
-
-addCustomMarker([60.16865753, 9.009658868], 'Nordfjord stasjon', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/norefjord_stasjon.jpg
-', 'En av mange flotte stasjoner langs Numedalsbanen');
-
-addCustomMarker([60.267534693, 8.943725335], '1. etasje', '', 'Trenger du klær eller gaver? Da er denne butikken verdt et besøk');
-
-addCustomMarker([60.264701865, 8.787837612], 'Badeplass', '', 'Fin badeplass');
-
-addCustomMarker([60.269479203, 8.750888655], 'Coop Prix Uvdal', '', 'Her kan du handle det du trenger til turen over Imingfjell');
-
-addCustomMarker([60.231947859, 8.586378742], 'Demning Imingfjell', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Imingfjell_deming.jpg
-', 'Et vakkert skue ved inngangen til Hardangervidda');
-
-addCustomMarker([60.006793803, 8.834367819], 'Bruhølen', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/bruholen_austbygdaai.jpg
-', 'Her er det flotte kulper i Austbygdåi');
-
-addCustomMarker([60.046342939, 9.153187378], 'Badedammen på Veggli', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/badedammen_veggli.jpg
-', 'Et yndet badested midt i Veggli sentrum');
-
-addCustomMarker([60.041959488, 9.155479281], 'Veggli Vertshus', '', 'Her kan du nyte god hjemmelagd is, leie dresin og sove komfortabelt');
-
-addCustomMarker([60.040467808, 9.15673983], 'Fjellkompaniet./', 'https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/Veggli_vertshus.jpg
-', 'Alt du trenger av utstyr til sykkelturen og friluftsliv');
-
-addCustomMarker([60.04678457, 8.98612262], 'Killingskardet', '', 'Her kan du følge rødmerket løype til Imingfjell og Blefjell');
-
-  // ... legg inn resten her på samme format ...
 </script>
-
 </body>
 </html>
+
