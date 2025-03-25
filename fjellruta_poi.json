@@ -3,372 +3,162 @@
     "name": "Sandviken Camping",
     "lat": 59.98905897,
     "lon": 8.816432107,
-    "desc": ""
-  },
-  {
-    "name": "sikker sykkelparkering",
-    "lat": 59.989333071,
-    "lon": 8.817189116,
-    "desc": ""
-  },
-  {
-    "name": "Sandstrand",
-    "lat": 59.988967867,
-    "lon": 8.818703435,
-    "desc": ""
-  },
-  {
-    "name": "Sauna til leie",
-    "lat": 59.988745722,
-    "lon": 8.819232783,
-    "desc": ""
-  },
-  {
-    "name": "Kiwi Austbydg",
-    "lat": 59.995158429,
-    "lon": 8.826762406,
-    "desc": ""
+    "desc": "Vakker campingplass med hytter, badstu, flott sandstrand og nydelig utsikt over Tinnsjø"
   },
   {
     "name": "Austbygde Bakeri.",
     "lat": 59.995255107,
     "lon": 8.828221442,
-    "desc": ""
+    "desc": "Deilige bakevarer, middag og trivelig vertskap"
   },
-  {
-    "name": "Øvrebygderundere",
-    "lat": 60.03986795,
-    "lon": 8.831358176,
-    "desc": ""
-  },
-  {
-    "name": "Lureåi vakker foss",
-    "lat": 60.054836959,
-    "lon": 8.820949838,
-    "desc": ""
-  },
-  {
+    {
     "name": "Håvardsrud Seterliv",
     "lat": 60.078617532,
     "lon": 8.864987101,
-    "desc": ""
+    "desc": "Her kan bo og delta i det tradisjonsrike seterlivet eller svinge innom for å smake ekte rjomegraut og ferske bakevarer"
   },
-  {
-    "name": "Hytteutleie Håvardsrud seterliv",
-    "lat": 60.078597798,
-    "lon": 8.862429723,
-    "desc": ""
-  },
-  {
-    "name": "Skirva fjellkyrkje",
-    "lat": 60.065143434,
-    "lon": 8.951376044,
-    "desc": ""
-  },
-  {
-    "name": "Fin rasteplass",
-    "lat": 60.212252383,
-    "lon": 9.019742176,
-    "desc": ""
-  },
-  {
-    "name": "Øktodden Mølle og fin foss",
-    "lat": 60.206782248,
-    "lon": 9.024242662,
-    "desc": ""
-  },
-  {
-    "name": "Nore I",
-    "lat": 60.267243223,
-    "lon": 8.959288401,
-    "desc": ""
-  },
-  {
+    {
     "name": "Kiwi Rødberg",
     "lat": 60.265884939,
     "lon": 8.946854063,
-    "desc": ""
+    "desc": "Alt du trenger på sykkelturen"
   },
   {
-    "name": "Kirkebygda Produkter",
+    "name": "Uvdalsbua",
     "lat": 60.267179296,
     "lon": 8.943991088,
-    "desc": ""
+    "desc": "Lokale produkter, god kaffe, flotte gaver og souvernirer"
   },
   {
     "name": "Rødberg Hotell",
     "lat": 60.267799011,
     "lon": 8.942691045,
-    "desc": ""
+    "desc": "Gode senger og hjemmelagd mat"
   },
   {
     "name": "Dokkebergfossen",
     "lat": 60.259987539,
     "lon": 8.928883543,
-    "desc": ""
+    "desc": "Flott foss og bru"
   },
-  {
-    "name": "Fiske Uvdalsåe",
-    "lat": 60.264701832,
-    "lon": 8.787072264,
-    "desc": ""
-  },
-  {
-    "name": "Aktivitetspark",
-    "lat": 60.26401245,
-    "lon": 8.787789898,
-    "desc": ""
-  },
-  {
+   {
     "name": "Camp Uvdal",
     "lat": 60.264915743,
     "lon": 8.788765865,
-    "desc": ""
+    "desc": "Idyllisk camp med aktivitetspark, hyggelige hytter og god mat"
   },
   {
     "name": "Uvdal stavkirke",
     "lat": 60.265177268,
     "lon": 8.834852182,
-    "desc": ""
+    "desc": "En nydelig stavkirke fra middelalderen"
   },
   {
     "name": "Imingfjell Turistheim",
     "lat": 60.23369961,
     "lon": 8.585622311,
-    "desc": ""
-  },
-  {
-    "name": "Sønstevann",
-    "lat": 60.221410452,
-    "lon": 8.549694535,
-    "desc": ""
+    "desc": "God mat ved inngangen til Hardangervidda med fine fjellturer og fiskemuligheter"
   },
   {
     "name": "Å Camp",
     "lat": 60.09926326,
     "lon": 8.756140888,
-    "desc": ""
+    "desc": "Prøv noen netter i flotte tretopphytter"
   },
   {
     "name": "Lure kulturminne område",
     "lat": 60.050557426,
     "lon": 8.817412481,
-    "desc": ""
+    "desc": "Flotte turer i kulturlandskapet"
   },
   {
     "name": "Austbygde kirke",
     "lat": 60.029533913,
     "lon": 8.826577634,
-    "desc": ""
-  },
-  {
-    "name": "Gaven Fjellhandel",
-    "lat": 60.12559432,
-    "lon": 8.684926221,
-    "desc": ""
-  },
-  {
-    "name": "Borgsjåbrotet",
-    "lat": 60.172016984,
-    "lon": 8.659887314,
-    "desc": ""
+    "desc": "Fin klassisk hvit trekirke"
   },
   {
     "name": "Kravik stasjon Numedalsbanen:",
     "lat": 60.135978776,
     "lon": 9.018087043,
-    "desc": ""
-  },
-  {
-    "name": "Eidsstryken stasjon",
-    "lat": 60.141779734,
-    "lon": 9.016011981,
-    "desc": ""
+    "desc": "En vakker stasjon på Numedalsbanen, hit kan du sykle på dresin fra Veggli"
   },
   {
     "name": "Eidsåe badeplass",
     "lat": 60.14437894,
     "lon": 9.006701689,
-    "desc": ""
-  },
-  {
-    "name": "Frygne gravfelt",
-    "lat": 60.148351483,
-    "lon": 9.013596957,
-    "desc": ""
+    "desc": "Fin badekulp i elva"
   },
   {
     "name": "Frognerhagen gård",
     "lat": 60.156268402,
     "lon": 9.010185517,
-    "desc": ""
+    "desc": "Her kan du leie SUP og prøve deg på fjorden"
   },
   {
     "name": "Nore stavkirke",
     "lat": 60.164560374,
     "lon": 9.010271502,
-    "desc": ""
+    "desc": "En unik stavkirke i hjertet av Numedal"
   },
   {
     "name": "Nordfjord stasjon",
     "lat": 60.16865753,
     "lon": 9.009658868,
-    "desc": ""
+    "desc": "En av mange flotte stasjoner langs Numedalsbanen"
   },
   {
     "name": "1. etasje",
     "lat": 60.267534693,
     "lon": 8.943725335,
-    "desc": ""
+    "desc": "Trenger du klær eller gaver? Da er denne butikken verdt et besøk"
   },
   {
     "name": "Badeplass",
     "lat": 60.264701865,
     "lon": 8.787837612,
-    "desc": ""
+    "desc": "Fin badeplass"
   },
   {
-    "name": "Coop Prix Uvdal..",
+    "name": "Coop Prix Uvdal",
     "lat": 60.269479203,
     "lon": 8.750888655,
-    "desc": ""
+    "desc": "Her kan du handle det du trenger til turen over Imingfjell"
   },
   {
     "name": "Demning Imingfjell",
     "lat": 60.231947859,
     "lon": 8.586378742,
-    "desc": ""
-  },
-  {
-    "name": "Store Nordmannsslepa",
-    "lat": 60.220630317,
-    "lon": 8.59253659,
-    "desc": ""
-  },
-  {
-    "name": "Tessungåi",
-    "lat": 60.120771776,
-    "lon": 8.706307304,
-    "desc": "Tessungåi"
-  },
-  {
-    "name": "Austbygåi",
-    "lat": 60.076906807,
-    "lon": 8.770134127,
-    "desc": ""
+    "desc": "Et vakkert skue ved inngangen til Hardangervidda"
   },
   {
     "name": "Bruhølen",
     "lat": 60.006793803,
     "lon": 8.834367819,
-    "desc": "Vanskelig å se fra veien. Benker og bord"
+    "desc": "Her er det flotte kulper i Austbygdåi"
   },
   {
     "name": "Badedammen på Veggli",
     "lat": 60.046342939,
     "lon": 9.153187378,
-    "desc": ""
-  },
-  {
-    "name": "Veggli stasjon, Veggli vertshus",
-    "lat": 60.043545522,
-    "lon": 9.152955965,
-    "desc": ""
-  },
-  {
-    "name": "Dresin Numedalsbanen",
-    "lat": 60.042882603,
-    "lon": 9.154741056,
-    "desc": ""
-  },
-  {
-    "name": "Veggli Vertshus",
-    "lat": 60.042055076,
-    "lon": 9.155422439,
-    "desc": ""
+    "desc": "Et yndet badested midt i Veggli sentrum"
   },
   {
     "name": "Veggli Vertshus",
     "lat": 60.041959488,
     "lon": 9.155479281,
-    "desc": ""
+    "desc": "Her kan du nyte god hjemmelagd is, leie dresin og sove komfortabelt"
   },
   {
     "name": "Fjellkompaniet./",
     "lat": 60.040467808,
     "lon": 9.15673983,
-    "desc": ""
-  },
-  {
-    "name": "Coop Extra",
-    "lat": 60.040600414,
-    "lon": 9.156242393,
-    "desc": ""
-  },
-  {
-    "name": "Fv 40",
-    "lat": 60.168747386,
-    "lon": 9.01871092,
-    "desc": "Til tider mye trafikk"
-  },
-  {
-    "name": "Fv 40",
-    "lat": 60.260235574,
-    "lon": 8.92737678,
-    "desc": "Til tider mye trafikk"
-  },
-  {
-    "name": "Kortere tur over Luråsgrende",
-    "lat": 60.065625268,
-    "lon": 8.780673203,
-    "desc": ""
-  },
-  {
-    "name": "Kortere tur over Øvrebygde",
-    "lat": 60.049002545,
-    "lon": 8.817841295,
-    "desc": ""
-  },
-  {
-    "name": "Lengre tur via Veggli",
-    "lat": 60.043669048,
-    "lon": 9.049551422,
-    "desc": ""
-  },
-  {
-    "name": "Avstikker til Håvardsrud Seterliv",
-    "lat": 60.074654035,
-    "lon": 8.854698474,
-    "desc": ""
-  },
-  {
-    "name": "Avstikker til Sandviken Camping",
-    "lat": 59.995506256,
-    "lon": 8.828301382,
-    "desc": ""
+    "desc": "Alt du trenger av utstyr til sykkelturen og friluftsliv"
   },
   {
     "name": "Killingskardet",
     "lat": 60.04678457,
     "lon": 8.98612262,
-    "desc": "Her kan dufølger rødmerket løype til Imingfjell og Blefjell"
+    "desc": "Her kan du følge rødmerket løype til Imingfjell og Blefjell"
   },
-  {
-    "name": "Store Nordmannsslepa",
-    "lat": 60.115287307,
-    "lon": 8.9409699,
-    "desc": ""
-  },
-  {
-    "name": "Nordre Frygne",
-    "lat": 60.149610391,
-    "lon": 9.012971493,
-    "desc": ""
-  },
-  {
-    "name": "Veggli fjellkirke",
-    "lat": 60.046006727,
-    "lon": 9.027923695,
-    "desc": ""
-  }
-]
+  ]
