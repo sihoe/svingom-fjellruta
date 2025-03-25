@@ -89,6 +89,16 @@
   }
 
   loadElevationData();
+  fetch("https://raw.githubusercontent.com/sihoe/svingom-fjellruta/main/fjellruta_poi.json")
+  .then(res => res.json())
+  .then(pois => {
+    pois.forEach(poi => {
+      L.marker([poi.lat, poi.lon])
+        .addTo(map)
+        .bindPopup(`<strong>${poi.name}</strong><br>${poi.desc}`);
+    });
+  });
+
 </script>
 
 </body>
